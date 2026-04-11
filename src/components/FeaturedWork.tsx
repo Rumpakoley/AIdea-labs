@@ -1,12 +1,10 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-// Generate 20 dummy projects
+// Generate 12 dummy projects
 const rawProjects = [
   "GROWW", "CULT FIT", "BOLT", "CARING", "RECMI", "AETHER", 
-  "NOMAD", "LUMEN", "PRISM", "SOLARA", "VEX", "FABLE", 
-  "ECHO LABS", "DRIFT", "KOVA", "ARC VISUAL", "PULSE", 
-  "SAGE", "ZEPHYR", "ORION"
+  "NOMAD", "LUMEN", "PRISM", "SOLARA", "VEX", "FABLE"
 ];
 
 // Alternate aspect ratios cleanly without messy empty gaps
@@ -31,7 +29,7 @@ export default function FeaturedWork() {
         {/* Wild Header */}
         <div className="relative mb-24 w-full flex justify-between items-start">
            <div className="font-mono text-[10px] md:text-xs text-[#00FF55] tracking-[0.3em] uppercase">
-             (20 Selected Cases)
+             (12 Selected Cases)
            </div>
            
            <motion.div
