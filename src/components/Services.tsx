@@ -73,30 +73,32 @@ export default function Services() {
             />
 
             {/* List Row Content */}
-            <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-start md:items-center justify-between pointer-events-none">
+            <div className="relative z-20 max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col items-start justify-between pointer-events-none">
               
-              <div className="flex items-start md:items-center gap-6 md:gap-16">
-                <span className={`font-mono text-sm md:text-2xl transition-colors duration-300 font-bold ${hoveredIdx === i ? 'text-black/50' : 'text-[#00FF55]'}`}>
-                  {service.id}
-                </span>
-                {/* Massive Typography */}
-                <h3 className={`text-6xl md:text-[140px] font-black tracking-tighter uppercase transition-all duration-300 leading-none ${hoveredIdx === i ? 'text-black tracking-widest' : 'text-white'}`}>
-                  {service.title}
-                </h3>
-              </div>
+              <div className="flex flex-col items-start gap-2">
+                <div className="flex items-center gap-6">
+                  <span className={`font-mono text-sm md:text-2xl transition-colors duration-300 font-bold ${hoveredIdx === i ? 'text-black/50' : 'text-[#00FF55]'}`}>
+                    {service.id}
+                  </span>
+                  {/* Massive Typography */}
+                  <h3 className={`text-6xl md:text-[140px] font-black tracking-tighter uppercase transition-all duration-300 leading-none ${hoveredIdx === i ? 'text-black tracking-widest' : 'text-white'}`}>
+                    {service.title}
+                  </h3>
+                </div>
 
-              {/* Subtitle that shifts in from the right on hover */}
-              <div className="mt-8 md:mt-0 flex items-center overflow-hidden">
-                <p className={`font-mono text-xs md:text-lg font-bold uppercase transition-all duration-500 transform ${hoveredIdx === i ? 'translate-x-0 opacity-100 text-black' : 'translate-x-12 opacity-0'}`}>
-                  // {service.subtitle}
-                </p>
+                {/* Subtitle that shifts in vertically below the title on hover */}
+                <div className="overflow-hidden pl-10 md:pl-16">
+                  <p className={`font-mono text-xs md:text-lg font-bold uppercase transition-all duration-500 transform ${hoveredIdx === i ? 'translate-y-0 opacity-100 text-black' : '-translate-y-4 opacity-0'}`}>
+                    // {service.subtitle}
+                  </p>
+                </div>
               </div>
 
             </div>
 
             {/* 4. TILTED IMAGE BURST */}
-            {/* Image blasts into the center-right of the screen and tilts aggressively when row is hovered */}
-            <div className="absolute top-1/2 left-[50%] md:left-[60%] -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 w-64 md:w-[400px] aspect-[3/4] pointer-events-none z-20">
+            {/* Image blasts into the center-right of the screen and tilts aggressively when row is hovered (placed at z-10, behind text/badge) */}
+            <div className="absolute top-1/2 left-[50%] md:left-[60%] -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 w-64 md:w-[320px] aspect-[3/4] pointer-events-none z-10">
                <motion.img 
                   src={service.image}
                   animate={{
@@ -110,7 +112,7 @@ export default function Services() {
             </div>
 
             {/* Scrolling Badge inside the row */}
-            <div className={`absolute right-10 top-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full border border-black flex items-center justify-center transition-all duration-700 ${hoveredIdx === i ? 'opacity-100 rotate-180 scale-100' : 'opacity-0 scale-50 -rotate-90'}`}>
+            <div className={`absolute right-6 md:right-12 top-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full border border-black flex items-center justify-center transition-all duration-700 z-30 ${hoveredIdx === i ? 'opacity-100 rotate-180 scale-100' : 'opacity-0 scale-50 -rotate-90'}`}>
                <span className="font-mono text-[10px] text-black text-center font-bold tracking-widest uppercase">
                  View <br/> Case <br/> Study
                </span>
