@@ -98,7 +98,7 @@ export default function Services() {
 
             {/* 4. TILTED IMAGE BURST */}
             {/* Image blasts into the center-right of the screen and tilts aggressively when row is hovered (placed at z-20, on top of text) */}
-            <div className="absolute top-1/2 left-[50%] md:left-[58%] -translate-y-1/2 -translate-x-1/2 w-56 md:w-[350px] aspect-[3/4] pointer-events-none z-20">
+            <div className="absolute top-1/2 left-[50%] md:left-[65%] -translate-y-1/2 -translate-x-1/2 w-56 md:w-[350px] aspect-[3/4] pointer-events-none z-20">
                <motion.img 
                   src={service.image}
                   animate={{
