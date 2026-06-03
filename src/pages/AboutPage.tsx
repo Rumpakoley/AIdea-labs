@@ -88,7 +88,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, type: "spring" }}
-                  className="flex flex-col md:flex-row items-start md:items-center py-10 border-b-2 border-zinc-900 group/step hover:bg-[#00FF55] transition-all duration-500 cursor-none"
+                  className="flex flex-col md:flex-row items-start md:items-center py-10 border-b-2 border-zinc-900 group/step hover:bg-[#00FF55] transition-all duration-500 md:cursor-none"
                 >
                    <div className="w-full md:w-1/3 flex items-center gap-6 mb-4 md:mb-0 transform group-hover/step:translate-x-8 transition-transform duration-500">
                       <span className="text-xl font-bold text-[#00FF55] group-hover/step:text-black group-hover/step:scale-150 transition-all duration-300" style={{ fontFamily: "'Silkscreen', cursive" }}>({step.num})</span>
@@ -121,7 +121,7 @@ export default function AboutPage() {
            >
               {[...clients, ...clients, ...clients].map((client, i) => (
                  <div key={i} className="flex items-center gap-16 group/client">
-                   <span className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-black hover:text-white hover:scale-125 transition-all duration-300 cursor-none" style={{ fontFamily: "'Syne', sans-serif" }}>
+                   <span className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-black hover:text-white hover:scale-125 transition-all duration-300 md:cursor-none" style={{ fontFamily: "'Syne', sans-serif" }}>
                      {client}
                    </span>
                    <span className="text-black text-4xl leading-none -mt-4 animate-spin">*</span>
@@ -147,7 +147,7 @@ export default function AboutPage() {
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
                  transition={{ delay: i * 0.05 }}
-                 className="flex items-center justify-between py-6 border-b-2 border-zinc-900 hover:border-[#00FF55] hover:bg-zinc-900 transition-all duration-300 cursor-none px-4 -mx-4 rounded-lg group/award"
+                 className="flex items-center justify-between py-6 border-b-2 border-zinc-900 hover:border-[#00FF55] hover:bg-zinc-900 transition-all duration-300 md:cursor-none px-4 -mx-4 rounded-lg group/award"
                >
                  <span className="text-2xl font-bold font-sans uppercase group-hover/award:text-[#00FF55] group-hover/award:translate-x-4 transition-transform duration-300">{award.name}</span>
                  <span className="text-sm font-bold tracking-widest text-[#00FF55] opacity-50 group-hover/award:opacity-100 group-hover/award:-translate-x-4 transition-all duration-300" style={{ fontFamily: "'Silkscreen', cursive" }}>({award.year})</span>

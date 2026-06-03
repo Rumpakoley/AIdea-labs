@@ -65,7 +65,7 @@ export default function Services() {
             key={service.id}
             onMouseEnter={() => setHoveredIdx(i)}
             onMouseLeave={() => setHoveredIdx(null)}
-            className="group relative w-full border-b border-white/10 py-12 md:py-20 cursor-crosshair overflow-hidden"
+            className="group relative w-full border-b border-white/10 py-12 md:py-20 md:cursor-crosshair overflow-hidden"
           >
             {/* 3. NEON FLASH BACKGROUND EFFECT */}
             <div 
@@ -73,7 +73,7 @@ export default function Services() {
             />
 
             {/* List Row Content */}
-            <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col items-start justify-between pointer-events-none">
+            <div className="relative z-20 md:z-10 max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col items-start justify-between pointer-events-none">
               
               <div className="flex flex-col items-start gap-2">
                 <div className="flex items-center gap-6">
@@ -98,7 +98,7 @@ export default function Services() {
 
             {/* 4. TILTED IMAGE BURST */}
             {/* Image blasts into the center-right of the screen and tilts aggressively when row is hovered (placed at z-20, on top of text) */}
-            <div className="absolute top-1/2 left-[50%] md:left-[74%] -translate-y-1/2 -translate-x-1/2 w-56 md:w-[350px] aspect-[3/4] pointer-events-none z-20">
+            <div className="absolute top-1/2 left-[50%] md:left-[74%] -translate-y-1/2 -translate-x-1/2 w-56 md:w-[350px] aspect-[3/4] pointer-events-none z-10 md:z-20">
                <motion.img 
                   src={service.image}
                   animate={{

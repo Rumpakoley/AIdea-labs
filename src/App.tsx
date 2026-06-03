@@ -12,7 +12,7 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <main className={`relative min-h-screen bg-navy overflow-x-hidden cursor-none ${!appLoaded ? 'h-screen overflow-hidden' : ''}`}>
+    <main className={`relative min-h-screen bg-navy overflow-x-hidden md:cursor-none ${!appLoaded ? 'h-screen overflow-hidden' : ''}`}>
       <Preloader onComplete={() => setAppLoaded(true)} />
       <CustomCursor />
       <Navbar />

@@ -51,7 +51,7 @@ export default function FeaturedWork() {
           {projects.map((project, i) => (
             <div 
               key={project.id}
-              className={`group relative break-inside-avoid w-full ${project.aspect} cursor-crosshair`}
+              className={`group relative break-inside-avoid w-full ${project.aspect} md:cursor-crosshair`}
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
             >

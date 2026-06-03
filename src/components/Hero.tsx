@@ -114,7 +114,7 @@ export default function Hero() {
                 transition={{ ease: "linear", duration: 300, repeat: Infinity }}
                 className="flex min-w-max"
               >
-                <span className="text-black text-xl md:text-3xl font-black uppercase tracking-widest px-8" style={{ fontFamily: "sans-serif" }}>
+                <span className="text-black text-lg md:text-3xl font-black uppercase tracking-widest px-8" style={{ fontFamily: "sans-serif" }}>
                   {marqueeText} {marqueeText}
                 </span>
               </motion.div>
@@ -127,7 +127,7 @@ export default function Hero() {
                 transition={{ ease: "linear", duration: 250, repeat: Infinity }}
                 className="flex min-w-max"
               >
-                <span className="text-transparent text-4xl md:text-6xl font-black uppercase tracking-widest px-8" style={{ WebkitTextStroke: "2px #00FF55", fontFamily: "sans-serif" }}>
+                <span className="text-transparent text-2xl md:text-6xl font-black uppercase tracking-widest px-8" style={{ WebkitTextStroke: "2px #00FF55", fontFamily: "sans-serif" }}>
                   {marqueeText} {marqueeText}
                 </span>
               </motion.div>
