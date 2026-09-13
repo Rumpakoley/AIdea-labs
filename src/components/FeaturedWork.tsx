@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
-import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
 
 // Generate 12 dummy projects
 const rawProjects: { title: string; video?: string }[] = [
@@ -20,7 +20,16 @@ const rawProjects: { title: string; video?: string }[] = [
 // Alternate aspect ratios cleanly without messy empty gaps
 const aspects = ["aspect-[3/4]", "aspect-[4/3]", "aspect-square", "aspect-[4/5]"];
 
-const projects = rawProjects.map((proj, i) => ({
+interface ProjectItem {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  video?: string;
+  aspect: string;
+}
+
+const projects: ProjectItem[] = rawProjects.map((proj, i) => ({
   id: i + 1,
   title: proj.title,
   category: i % 2 === 0 ? "Digital Identity" : "Motion Story",
@@ -31,6 +40,25 @@ const projects = rawProjects.map((proj, i) => ({
 
 export default function FeaturedWork() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+      }
+    };
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedProject]);
 
   return (
     <section id="work" className="py-24 md:py-40 bg-[#0A0A0A] font-sans relative overflow-hidden">
@@ -62,7 +90,8 @@ export default function FeaturedWork() {
           {projects.map((project, i) => (
             <div 
               key={project.id}
-              className={`group relative break-inside-avoid w-full ${project.aspect} md:cursor-crosshair`}
+              onClick={() => setSelectedProject(project)}
+              className={`group relative break-inside-avoid w-full ${project.aspect} cursor-pointer md:cursor-crosshair`}
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
             >
@@ -143,6 +172,79 @@ export default function FeaturedWork() {
 
         </div>
       </div>
+
+      {/* Pop-up Modal Window for Video / Media */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProject(null)}
+            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-8 cursor-pointer"
+          >
+            {/* Modal Box */}
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl bg-[#0A0A0A] border-2 border-[#00FF55] shadow-[0_0_50px_rgba(0,255,85,0.25)] flex flex-col overflow-hidden cursor-default"
+            >
+              {/* Modal Top Header */}
+              <div className="w-full bg-[#121212] border-b-2 border-[#00FF55]/30 px-6 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00FF55] animate-ping" />
+                  <span className="font-mono text-xs md:text-sm text-[#00FF55] font-bold tracking-widest uppercase">
+                    // {selectedProject.title} [{String(selectedProject.id).padStart(2, '0')}]
+                  </span>
+                  <span className="hidden sm:inline-block font-sans text-xs text-zinc-500 uppercase font-semibold">
+                    ✦ {selectedProject.category}
+                  </span>
+                </div>
+
+                {/* Close Button to return back to website */}
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="group flex items-center gap-2 px-4 py-2 bg-black border border-[#00FF55] text-[#00FF55] hover:bg-[#00FF55] hover:text-black transition-colors duration-200 font-mono text-xs font-bold uppercase tracking-widest cursor-pointer shadow-[2px_2px_0px_#00FF55] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
+                  aria-label="Close popup window"
+                >
+                  <span>CLOSE</span>
+                  <span className="text-sm leading-none font-black">✕</span>
+                </button>
+              </div>
+
+              {/* Media Viewing Area */}
+              <div className="relative w-full aspect-video md:aspect-[16/10] max-h-[72vh] bg-black flex items-center justify-center overflow-hidden">
+                {selectedProject.video ? (
+                  <video
+                    src={selectedProject.video}
+                    autoPlay
+                    controls
+                    loop
+                    playsInline
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-contain"
+                  />
+                )}
+              </div>
+
+              {/* Modal Bottom Bar */}
+              <div className="w-full bg-[#0A0A0A] border-t border-white/10 px-6 py-3 flex items-center justify-between text-[10px] md:text-xs text-zinc-500 font-mono uppercase tracking-widest">
+                <span>AIDEA LABS ✦ MEDIA POPUP</span>
+                <span className="text-[#00FF55]">PRESS ESC OR CLICK OUTSIDE TO CLOSE</span>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 }
