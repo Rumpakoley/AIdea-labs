@@ -11,7 +11,7 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "AETHER" },
   { title: "NOMAD" },
   { title: "LUMEN" },
-  { title: "PRISM" },
+  { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
   { title: "SOLARA" },
   { title: "VEX" },
   { title: "FABLE" }
