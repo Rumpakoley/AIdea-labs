@@ -7,7 +7,7 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "CULT FIT" },
   { title: "BOLT" },
   { title: "CARING" },
-  { title: "RECMI" },
+  { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4" },
   { title: "AETHER" },
   { title: "NOMAD" },
   { title: "LUMEN" },
