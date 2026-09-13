@@ -2,19 +2,30 @@ import { motion } from "motion/react";
 import { useState } from "react";
 
 // Generate 12 dummy projects
-const rawProjects = [
-  "GROWW", "CULT FIT", "BOLT", "CARING", "RECMI", "AETHER", 
-  "NOMAD", "LUMEN", "PRISM", "SOLARA", "VEX", "FABLE"
+const rawProjects: { title: string; video?: string }[] = [
+  { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
+  { title: "CULT FIT" },
+  { title: "BOLT" },
+  { title: "CARING" },
+  { title: "RECMI" },
+  { title: "AETHER" },
+  { title: "NOMAD" },
+  { title: "LUMEN" },
+  { title: "PRISM" },
+  { title: "SOLARA" },
+  { title: "VEX" },
+  { title: "FABLE" }
 ];
 
 // Alternate aspect ratios cleanly without messy empty gaps
 const aspects = ["aspect-[3/4]", "aspect-[4/3]", "aspect-square", "aspect-[4/5]"];
 
-const projects = rawProjects.map((title, i) => ({
+const projects = rawProjects.map((proj, i) => ({
   id: i + 1,
-  title: title,
+  title: proj.title,
   category: i % 2 === 0 ? "Digital Identity" : "Motion Story",
   image: `https://picsum.photos/seed/masonryW${i}/800/1000`,
+  video: proj.video,
   aspect: aspects[i % aspects.length],
 }));
 
@@ -71,18 +82,34 @@ export default function FeaturedWork() {
                   className={`absolute inset-0 border-[2px] border-[#00FF55] transition-all duration-300 pointer-events-none ${hoveredIdx === i ? 'rotate-2 scale-[1.02] translate-x-3 translate-y-3 shadow-[0_0_20px_rgba(0,255,85,0.2)]' : 'rotate-0 scale-100 translate-x-0 translate-y-0 opacity-0 bg-[#0A0A0A]'}`} 
                 />
 
-                {/* Main Image */}
+                {/* Main Media (Video or Image) */}
                 <div className="absolute inset-0 overflow-hidden bg-[#151515]">
-                  <motion.img 
-                    src={project.image}
-                    animate={{ 
-                      scale: hoveredIdx === i ? 1.05 : 1,
-                      filter: hoveredIdx === i ? 'grayscale(0%) contrast(110%)' : 'grayscale(100%) contrast(120%)'
-                    }}
-                    transition={{ duration: 0.4 }}
-                    className="w-full h-full object-cover mix-blend-normal"
-                    referrerPolicy="no-referrer"
-                  />
+                  {project.video ? (
+                    <motion.video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      animate={{ 
+                        scale: hoveredIdx === i ? 1.05 : 1,
+                        filter: hoveredIdx === i ? 'grayscale(0%) contrast(110%)' : 'grayscale(100%) contrast(120%)'
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="w-full h-full object-cover mix-blend-normal"
+                    />
+                  ) : (
+                    <motion.img 
+                      src={project.image}
+                      animate={{ 
+                        scale: hoveredIdx === i ? 1.05 : 1,
+                        filter: hoveredIdx === i ? 'grayscale(0%) contrast(110%)' : 'grayscale(100%) contrast(120%)'
+                      }}
+                      transition={{ duration: 0.4 }}
+                      className="w-full h-full object-cover mix-blend-normal"
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/20 mix-blend-overlay pointer-events-none" />
                 </div>
                 
