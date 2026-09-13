@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // Generate 12 dummy projects
 const rawProjects: { title: string; video?: string }[] = [
   { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
-  { title: "CULT FIT" },
+  { title: "CULT FIT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288840/Re_3NNNNNN.mp4" },
   { title: "BOLT" },
   { title: "CARING" },
   { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4" },
