@@ -203,16 +203,6 @@ export default function FeaturedWork() {
                     ✦ {selectedProject.category}
                   </span>
                 </div>
-
-                {/* Close Button to return back to website */}
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="group flex items-center gap-2 px-4 py-2 bg-black border border-[#00FF55] text-[#00FF55] hover:bg-[#00FF55] hover:text-black transition-colors duration-200 font-mono text-xs font-bold uppercase tracking-widest cursor-pointer shadow-[2px_2px_0px_#00FF55] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
-                  aria-label="Close popup window"
-                >
-                  <span>CLOSE</span>
-                  <span className="text-sm leading-none font-black">✕</span>
-                </button>
               </div>
 
               {/* Media Viewing Area */}

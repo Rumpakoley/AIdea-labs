@@ -55,7 +55,7 @@ export default function CustomCursor() {
     <>
       {/* The Anarchic Outer Lagging Shape */}
       <motion.div
-        className="fixed top-0 left-0 w-20 h-20 border-[1px] border-white pointer-events-none z-[98] mix-blend-difference"
+        className="fixed top-0 left-0 w-20 h-20 border-[1px] border-white pointer-events-none z-[10000] mix-blend-difference"
         animate={{ 
           rotate: 360, 
           borderRadius: ["50%", "0%", "30%", "50%"] 
@@ -74,7 +74,7 @@ export default function CustomCursor() {
 
       {/* The Fast Spinning Geometric Target */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border-2 border-[#00FF55] pointer-events-none z-[99] mix-blend-exclusion"
+        className="fixed top-0 left-0 w-10 h-10 border-2 border-[#00FF55] pointer-events-none z-[10001] mix-blend-exclusion"
         animate={{ 
           rotate: -360, 
           scale: [1, 1.4, 1] 
@@ -93,7 +93,7 @@ export default function CustomCursor() {
       
       {/* The Exact Target Crosshair */}
       <motion.div
-        className="fixed top-0 left-0 w-[12px] h-[12px] text-[#00FF55] pointer-events-none z-[100] mix-blend-difference flex items-center justify-center font-black text-sm"
+        className="fixed top-0 left-0 w-[12px] h-[12px] text-[#00FF55] pointer-events-none z-[10002] mix-blend-difference flex items-center justify-center font-black text-sm"
         style={{
           x: mouseX,
           y: mouseY,
