@@ -8,7 +8,7 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "BOLT" },
   { title: "CARING" },
   { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4" },
-  { title: "AETHER" },
+  { title: "AETHER", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290088/TFS_ICEKIVI_D6.mp4" },
   { title: "NOMAD" },
   { title: "LUMEN" },
   { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
