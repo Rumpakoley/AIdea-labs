@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Generate 12 dummy projects
 const rawProjects: { title: string; video?: string }[] = [
@@ -17,9 +17,6 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "FABLE" }
 ];
 
-// Alternate aspect ratios cleanly without messy empty gaps
-const aspects = ["aspect-[3/4]", "aspect-[4/3]", "aspect-square", "aspect-[4/5]"];
-
 interface ProjectItem {
   id: number;
   title: string;
@@ -35,12 +32,23 @@ const projects: ProjectItem[] = rawProjects.map((proj, i) => ({
   category: i % 2 === 0 ? "Digital Identity" : "Motion Story",
   image: `https://picsum.photos/seed/masonryW${i}/800/1000`,
   video: proj.video,
-  aspect: aspects[i % aspects.length],
+  aspect: "aspect-[3/4]",
 }));
 
 export default function FeaturedWork() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = scrollContainerRef.current.clientWidth * 0.75;
+      scrollContainerRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -65,16 +73,36 @@ export default function FeaturedWork() {
       
       <div className="max-w-[1600px] mx-auto w-full px-6 flex flex-col relative z-10">
         
-        {/* Wild Header */}
-        <div className="relative mb-24 w-full flex justify-between items-start">
-           <div className="font-mono text-[10px] md:text-xs text-[#00FF55] tracking-[0.3em] uppercase">
-             (12 Selected Cases)
+        {/* Wild Header with Navigation Controls */}
+        <div className="relative mb-16 md:mb-20 w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+           <div className="flex flex-col gap-4">
+             <div className="font-mono text-[10px] md:text-xs text-[#00FF55] tracking-[0.3em] uppercase">
+               (12 Selected Cases)
+             </div>
+             
+             {/* Horizontal Scroll Navigation Controls */}
+             <div className="flex items-center gap-3">
+               <button 
+                 onClick={() => handleScroll("left")}
+                 className="px-4 py-2 bg-black border border-white/20 hover:border-[#00FF55] text-white hover:text-[#00FF55] transition-colors font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-[2px_2px_0px_rgba(0,255,85,0.3)] hover:shadow-none"
+                 aria-label="Scroll left"
+               >
+                 <span>←</span> PREV
+               </button>
+               <button 
+                 onClick={() => handleScroll("right")}
+                 className="px-4 py-2 bg-black border border-white/20 hover:border-[#00FF55] text-white hover:text-[#00FF55] transition-colors font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-[2px_2px_0px_rgba(0,255,85,0.3)] hover:shadow-none"
+                 aria-label="Scroll right"
+               >
+                 NEXT <span>→</span>
+               </button>
+             </div>
            </div>
            
            <motion.div
              animate={{ y: [0, -10, 0] }}
              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-             className="text-right"
+             className="text-left md:text-right"
            >
               <h2 className="text-5xl md:text-[140px] font-black tracking-tighter leading-[0.75] uppercase text-[#EFEFEF] mix-blend-exclusion">
                 WORK<br />
@@ -85,13 +113,17 @@ export default function FeaturedWork() {
            </motion.div>
         </div>
 
-        {/* Tightly Aligned Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 w-full">
+        {/* Single-Line Horizontal Scroll Container */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex flex-nowrap overflow-x-auto gap-6 md:gap-8 pb-12 pt-4 w-full scroll-smooth snap-x snap-mandatory [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-black/60 [&::-webkit-scrollbar-thumb]:bg-[#00FF55]/40 hover:[&::-webkit-scrollbar-thumb]:bg-[#00FF55]"
+          style={{ scrollbarWidth: "thin", scrollbarColor: "#00FF55 #111111" }}
+        >
           {projects.map((project, i) => (
             <div 
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className={`group relative break-inside-avoid w-full ${project.aspect} cursor-pointer md:cursor-crosshair`}
+              className="shrink-0 snap-start w-[85vw] sm:w-[55vw] md:w-[420px] lg:w-[460px] aspect-[3/4] group relative cursor-pointer md:cursor-crosshair"
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
             >
