@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 
-// Generate 12 dummy projects
+// Generate projects
 const rawProjects: { title: string; video?: string }[] = [
+  { title: "NEXUS" },
+  { title: "KINETIC" },
   { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
   { title: "CULT FIT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288840/Re_3NNNNNN.mp4" },
   { title: "BOLT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288515/Orient_Jewellers_1NNNNNNNNNN.mp4" },
@@ -30,7 +32,7 @@ const projects: ProjectItem[] = rawProjects.map((proj, i) => ({
   id: i + 1,
   title: proj.title,
   category: i % 2 === 0 ? "Digital Identity" : "Motion Story",
-  image: `https://picsum.photos/seed/masonryW${i}/800/1000`,
+  image: `https://picsum.photos/seed/masonryW${i + 5}/800/1000`,
   video: proj.video,
   aspect: "aspect-[3/4]",
 }));
@@ -77,7 +79,7 @@ export default function FeaturedWork() {
         <div className="relative mb-16 md:mb-20 w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
            <div className="flex flex-col gap-4">
              <div className="font-mono text-[10px] md:text-xs text-[#00FF55] tracking-[0.3em] uppercase">
-               (12 Selected Cases)
+               ({projects.length} Selected Cases)
              </div>
              
              {/* Horizontal Scroll Navigation Controls */}
