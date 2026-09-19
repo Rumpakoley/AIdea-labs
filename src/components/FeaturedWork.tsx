@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from "react";
 
 // Generate projects
 const rawProjects: { title: string; video?: string }[] = [
+  { title: "VELOCITY" },
+  { title: "QUANTUM" },
   { title: "NEXUS" },
   { title: "KINETIC" },
   { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
