@@ -11,7 +11,7 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
   { title: "CULT FIT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288840/Re_3NNNNNN.mp4" },
   { title: "BOLT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288515/Orient_Jewellers_1NNNNNNNNNN.mp4" },
-  { title: "CARING" },
+  { title: "CARING", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287770/TSF_CCS_1D2.mov" },
   { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4" },
   { title: "AETHER", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290088/TFS_ICEKIVI_D6.mp4" },
   { title: "NOMAD", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290215/TFS_WP_TINY_Q3TXTLogo.mp4" },
