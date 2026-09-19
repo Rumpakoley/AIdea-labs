@@ -10,7 +10,7 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4" },
   { title: "AETHER", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290088/TFS_ICEKIVI_D6.mp4" },
   { title: "NOMAD", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290215/TFS_WP_TINY_Q3TXTLogo.mp4" },
-  { title: "LUMEN" },
+  { title: "LUMEN", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290122/TFS_WP_28_Spencers_D4.mp4" },
   { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
   { title: "SOLARA", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287576/T_1n.mov" },
   { title: "VEX" },
