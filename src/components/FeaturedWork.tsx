@@ -18,7 +18,9 @@ const rawProjects: { title: string; video?: string }[] = [
   { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
   { title: "SOLARA", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287576/T_1n.mov" },
   { title: "VEX", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290001/Nova_3NN.mp4" },
-  { title: "FABLE", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288918/N_2E.mov" }
+  { title: "FABLE", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288918/N_2E.mov" },
+  { title: "ECLIPSE", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-63854.mp4" },
+  { title: "HORIZON", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804547/Video-37012.mp4" }
 ];
 
 interface ProjectItem {
