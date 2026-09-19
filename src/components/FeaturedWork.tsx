@@ -3,10 +3,10 @@ import { useState, useEffect, useRef } from "react";
 
 // Generate projects
 const rawProjects: { title: string; video?: string }[] = [
-  { title: "VELOCITY" },
-  { title: "QUANTUM" },
-  { title: "NEXUS" },
-  { title: "KINETIC" },
+  { title: "VELOCITY", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-7781.mp4" },
+  { title: "QUANTUM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-29816.mp4" },
+  { title: "NEXUS", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804413/Ex1.mp4" },
+  { title: "KINETIC", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804289/TFS_WP_NOVA_SEP_01.mov" },
   { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
   { title: "CULT FIT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288840/Re_3NNNNNN.mp4" },
   { title: "BOLT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288515/Orient_Jewellers_1NNNNNNNNNN.mp4" },
