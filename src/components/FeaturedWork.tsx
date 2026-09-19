@@ -221,30 +221,30 @@ export default function FeaturedWork() {
             onClick={() => setSelectedProject(null)}
             className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-8 cursor-pointer"
           >
-            {/* Modal Box */}
+            {/* Modal Box in Vertical Shape */}
             <motion.div
               initial={{ scale: 0.9, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.9, y: 20, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl bg-[#0A0A0A] border-2 border-[#00FF55] shadow-[0_0_50px_rgba(0,255,85,0.25)] flex flex-col overflow-hidden cursor-default"
+              className="relative w-[92vw] max-w-[450px] bg-[#0A0A0A] border-2 border-[#00FF55] shadow-[0_0_50px_rgba(0,255,85,0.3)] flex flex-col overflow-hidden cursor-default"
             >
               {/* Modal Top Header */}
-              <div className="w-full bg-[#121212] border-b-2 border-[#00FF55]/30 px-6 py-4 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00FF55] animate-ping" />
+              <div className="w-full bg-[#121212] border-b-2 border-[#00FF55]/30 px-5 py-3.5 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="w-2 h-2 rounded-full bg-[#00FF55] animate-ping" />
                   <span className="font-mono text-xs md:text-sm text-[#00FF55] font-bold tracking-widest uppercase">
                     // {selectedProject.title} [{String(selectedProject.id).padStart(2, '0')}]
                   </span>
-                  <span className="hidden sm:inline-block font-sans text-xs text-zinc-500 uppercase font-semibold">
-                    ✦ {selectedProject.category}
-                  </span>
                 </div>
+                <span className="font-sans text-[11px] text-zinc-400 uppercase font-semibold tracking-wider">
+                  {selectedProject.category}
+                </span>
               </div>
 
-              {/* Media Viewing Area */}
-              <div className="relative w-full aspect-video md:aspect-[16/10] max-h-[72vh] bg-black flex items-center justify-center overflow-hidden">
+              {/* Media Viewing Area (Vertical / Portrait) */}
+              <div className="relative w-full aspect-[9/16] max-h-[76vh] bg-black flex items-center justify-center overflow-hidden">
                 {selectedProject.video ? (
                   <video
                     src={selectedProject.video}
@@ -252,21 +252,21 @@ export default function FeaturedWork() {
                     controls
                     loop
                     playsInline
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain bg-black"
                   />
                 ) : (
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain bg-black"
                   />
                 )}
               </div>
 
               {/* Modal Bottom Bar */}
-              <div className="w-full bg-[#0A0A0A] border-t border-white/10 px-6 py-3 flex items-center justify-between text-[10px] md:text-xs text-zinc-500 font-mono uppercase tracking-widest">
-                <span>AIDEA LABS ✦ MEDIA POPUP</span>
-                <span className="text-[#00FF55]">PRESS ESC OR CLICK OUTSIDE TO CLOSE</span>
+              <div className="w-full bg-[#0A0A0A] border-t border-white/10 px-5 py-3 flex items-center justify-between text-[10px] text-zinc-500 font-mono uppercase tracking-widest">
+                <span>AIDEA LABS</span>
+                <span className="text-[#00FF55]">PRESS ESC OR CLICK OUTSIDE</span>
               </div>
             </motion.div>
           </motion.div>
