@@ -13,7 +13,7 @@ const rawProjects: { title: string; video?: string; brand?: string }[] = [
   { title: "BOLT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288515/Orient_Jewellers_1NNNNNNNNNN.mp4", brand: "Corient" },
   { title: "CARING", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287770/TSF_CCS_1D2.mov", brand: "Relaxo" },
   { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4", brand: "Sparx" },
-  { title: "AETHER", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290088/TFS_ICEKIVI_D6.mp4" },
+  { title: "AETHER", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290088/TFS_ICEKIVI_D6.mp4", brand: "Icekivi" },
   { title: "NOMAD", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290215/TFS_WP_TINY_Q3TXTLogo.mp4" },
   { title: "LUMEN", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
   { title: "SOLARA", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287576/T_1n.mov" },
