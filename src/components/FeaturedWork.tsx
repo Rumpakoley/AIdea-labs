@@ -2,10 +2,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 
 // Generate projects
-const rawProjects: { title: string; video?: string }[] = [
+const rawProjects: { title: string; video?: string; brand?: string }[] = [
   { title: "ELEGANT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-7781.mp4" },
   { title: "QUANTUM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-29816.mp4" },
-  { title: "NEXUS", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804413/Ex1.mp4" },
+  { title: "VELOCITY", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804413/Ex1.mp4", brand: "Sparks" },
   { title: "KINETIC", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804289/TFS_WP_NOVA_SEP_01.mov" },
   { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290122/TFS_WP_28_Spencers_D4.mp4" },
   { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
@@ -35,7 +35,7 @@ interface ProjectItem {
 const projects: ProjectItem[] = rawProjects.map((proj, i) => ({
   id: i + 1,
   title: proj.title,
-  category: i % 2 === 0 ? "Digital Identity" : "Motion Story",
+  category: proj.brand || (i % 2 === 0 ? "Digital Identity" : "Motion Story"),
   image: `https://picsum.photos/seed/masonryW${i + 5}/800/1000`,
   video: proj.video,
   aspect: "aspect-[3/4]",
