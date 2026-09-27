@@ -15,7 +15,7 @@ const rawProjects: { title: string; video?: string; brand?: string }[] = [
   { title: "RECMI", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290347/TFS_WP12_RELAXO_1.mp4", brand: "Sparx" },
   { title: "AETHER", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290088/TFS_ICEKIVI_D6.mp4", brand: "Icekivi" },
   { title: "NOMAD", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290215/TFS_WP_TINY_Q3TXTLogo.mp4", brand: "Tiny" },
-  { title: "LUMEN", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov" },
+  { title: "LUMEN", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287972/AnavrinMSH_1.mov", brand: "Anavrin" },
   { title: "SOLARA", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789287576/T_1n.mov" },
   { title: "VEX", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290001/Nova_3NN.mp4" },
   { title: "FABLE", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288918/N_2E.mov" },
