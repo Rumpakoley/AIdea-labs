@@ -42,8 +42,9 @@ export default function Hero() {
           loop 
           muted 
           playsInline
-          className="w-full h-full object-cover"
-          src="https://res.cloudinary.com/sokhf44d/video/upload/v1790491651/magnific_reference-map-img11-img8-_mExtycChJQ.mp4"
+          preload="auto"
+          className="w-full h-full object-cover transform-gpu will-change-transform"
+          src="https://res.cloudinary.com/sokhf44d/video/upload/q_auto,vc_h264,ac_none/v1790491651/magnific_reference-map-img11-img8-_mExtycChJQ.mp4"
         />
       </div>
 
