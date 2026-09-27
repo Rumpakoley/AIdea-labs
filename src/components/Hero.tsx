@@ -35,26 +35,17 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       className="relative h-[100dvh] w-full bg-[#0A0A0A] overflow-hidden font-sans border-b border-white/5"
     >
-      {/* EXTREME FUNKY GLITCH VIDEO BACKGROUND */}
-      <motion.div 
-        initial={{ clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)", scale: 1.5, filter: "hue-rotate(180deg) invert(100%) blur(20px)" }}
-        animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", scale: 1, filter: "hue-rotate(0deg) invert(0%) blur(0px)" }}
-        transition={{ duration: 1.2, ease: [0.87, 0, 0.13, 1] }}
-        className="absolute inset-0 pointer-events-none overflow-hidden"
-      >
-        <motion.video 
+      {/* VIDEO BACKGROUND */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <video 
           autoPlay 
           loop 
           muted 
           playsInline
-          animate={{ x: [0, -4, 4, -2, 2, 0], y: [0, 2, -2, 4, -4, 0], filter: ["sepia(0%) contrast(150%)", "sepia(50%) contrast(250%) invert(10%)", "sepia(0%) contrast(150%)"] }}
-          transition={{ duration: 0.3, repeat: Infinity, repeatType: "mirror", ease: "linear" }}
-          className="w-full h-full object-cover grayscale opacity-50 mix-blend-screen"
+          className="w-full h-full object-cover"
           src="https://res.cloudinary.com/sokhf44d/video/upload/v1790491651/magnific_reference-map-img11-img8-_mExtycChJQ.mp4"
         />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20" />
-        <div className="absolute inset-0 bg-[#00FF55]/10 mix-blend-overlay" />
-      </motion.div>
+      </div>
 
       {/* Reticle */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-[#00FF55]/20 rounded-full pointer-events-none z-0 flex items-center justify-center">
