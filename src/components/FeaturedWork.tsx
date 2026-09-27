@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 
 // Generate projects
 const rawProjects: { title: string; video?: string }[] = [
-  { title: "VELOCITY", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-7781.mp4" },
+  { title: "ELEGANT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-7781.mp4" },
   { title: "QUANTUM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-29816.mp4" },
   { title: "NEXUS", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804413/Ex1.mp4" },
   { title: "KINETIC", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804289/TFS_WP_NOVA_SEP_01.mov" },
@@ -198,7 +198,7 @@ export default function FeaturedWork() {
                 className="absolute -bottom-4 right-0 md:-right-4 z-30 bg-[#111111] border border-[#00FF55]/30 p-3 shadow-2xl backdrop-blur-md w-max pointer-events-none"
               >
                  <span className="font-mono text-[9px] text-[#00FF55] tracking-widest uppercase block mb-1">
-                   Category
+                   Brand
                  </span>
                  <p className="font-sans text-xs text-white tracking-wide uppercase font-bold">
                    {project.category}
