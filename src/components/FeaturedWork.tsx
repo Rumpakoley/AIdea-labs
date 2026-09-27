@@ -6,7 +6,7 @@ const rawProjects: { title: string; video?: string; brand?: string }[] = [
   { title: "ELEGANT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-7781.mp4" },
   { title: "QUANTUM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804545/Video-29816.mp4" },
   { title: "VELOCITY", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804413/Ex1.mp4", brand: "Sparks" },
-  { title: "KINETIC", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804289/TFS_WP_NOVA_SEP_01.mov" },
+  { title: "KINETIC", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789804289/TFS_WP_NOVA_SEP_01.mov", brand: "Nova" },
   { title: "GROWW", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789290122/TFS_WP_28_Spencers_D4.mp4" },
   { title: "PRISM", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288980/F_H_1nnnn.mov" },
   { title: "CULT FIT", video: "https://res.cloudinary.com/sokhf44d/video/upload/v1789288840/Re_3NNNNNN.mp4" },
